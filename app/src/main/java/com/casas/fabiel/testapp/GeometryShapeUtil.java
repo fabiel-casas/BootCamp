@@ -1,5 +1,7 @@
 package com.casas.fabiel.testapp;
 
+import android.support.annotation.NonNull;
+
 public class GeometryShapeUtil {
     public final static int SQUARE = 0;
     public final static int TRIANGLE = 1;
@@ -44,6 +46,11 @@ public class GeometryShapeUtil {
 
     private static String getAsteriskTriangle(int row) {
         int asteriskNum = calculateMaxSize(row + 1);
+        return createAsterisk(asteriskNum);
+    }
+
+    @NonNull
+    private static String createAsterisk(int asteriskNum) {
         StringBuilder asterisk = new StringBuilder();
         for (int count = 0; count < asteriskNum; count++) {
             asterisk.append("*");
@@ -69,8 +76,10 @@ public class GeometryShapeUtil {
     }
 
     private static String createSquare(int size) {
-        return new StringBuilder().append("***\n").
-                append("***\n").
-                append("***\n").toString();
+        StringBuilder result = new StringBuilder();
+        for (int count = 0; count < size; count++) {
+            result.append(createAsterisk(size)).append("\n");
+        }
+        return result.toString();
     }
 }

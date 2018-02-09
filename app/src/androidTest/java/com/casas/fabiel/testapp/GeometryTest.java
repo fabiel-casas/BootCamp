@@ -15,7 +15,7 @@ public class GeometryTest {
 
     @Test
     public void createASquare() {
-        String shape = GeometryShapeUtil.createShape(SQUARE, 5);
+        String shape = GeometryShapeUtil.createShape(SQUARE, 3);
         assertEquals(shape, new StringBuilder().append("***\n").
                 append("***\n").
                 append("***\n").toString());
