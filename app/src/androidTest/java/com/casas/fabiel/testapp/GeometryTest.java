@@ -23,10 +23,11 @@ public class GeometryTest {
 
     @Test
     public void createATriangle() {
-        String shape = GeometryShapeUtil.createShape(TRIANGLE, 5);
-        assertEquals(shape, new StringBuilder().append("  *  \n").
-                append(" ***   \n").
-                append("*****\n").toString());
+        String shape = GeometryShapeUtil.createShape(TRIANGLE, 4);
+        assertEquals(shape, new StringBuilder().append("   *   \n").
+                append("  ***  \n").
+                append(" ***** \n").
+                append("*******\n").toString());
     }
 
     @Test
